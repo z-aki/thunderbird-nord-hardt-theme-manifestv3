@@ -1,6 +1,10 @@
+# Fork details
+
+Forked from  <https://github.com/artrz/thunderbird-nord-hardt-theme> for manifest v3 support.
+
 # Thunderbird Nord Hardt Theme
 
-An arctic, north-bluish dark, clean and elegant color scheme for **Thunderbird 128+**. Based on the [Nord Theme](https://www.nordtheme.com) pallette.
+An arctic, north-bluish dark, clean and elegant color scheme for **Thunderbird 128 onwards**. Based on the [Nord Theme](https://www.nordtheme.com) pallette.
 
 ![Inbox](resources/1-inbox.png)
 
@@ -8,7 +12,6 @@ An arctic, north-bluish dark, clean and elegant color scheme for **Thunderbird 1
 
 ![Account](resources/3-account.png)
 
-Theme generated using the [Thunderbird Theme Builder](https://github.com/artrz/thunderbird-theme-builder).
 
 ## Install
 
@@ -19,16 +22,10 @@ Theme generated using the [Thunderbird Theme Builder](https://github.com/artrz/t
 
 ## Build
 
-Install the required dependencies:
+Run the shell script. Needs `zip` command.
 
-```sh
-npm install
+```zsh
+zsh ./make.sh
 ```
 
-Generate the theme:
-
-```sh
-npm run build
-```
-
-The XPI file will be created inside `./build`
+The XPI file will be created.
