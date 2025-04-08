@@ -6,10 +6,6 @@ body {
   background-color: var(--nord_00);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// SPACES SIDEBAR (SECTION BUTTONS)
-////////////////////////////////////////////////////////////////////////////////
-
 /* Spaces (main sidebar) */
 .spaces-toolbar:not([hidden]) {
   background-image: none !important;
@@ -20,78 +16,59 @@ body {
   background: var(--nord_02) !important;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// ACCOUNTS SIDEBAR
-////////////////////////////////////////////////////////////////////////////////
-
 /* account folders */
-#folderTree>li>ul>li .name {
+#folderTree > li > ul > li .name {
   color: var(--nord_04) !important;
 }
 
-#folderTree>li>ul>li>ul .name {
+#folderTree > li > ul > li > ul .name {
   color: #99a8b8 !important;
 }
 
 /* customize color on NEW unread email badge */
-.new-messages>.container>.unread-count {
+.new-messages > .container > .unread-count {
   color: var(--nord_00) !important;
 }
 
-// The total count for a parent folder
-.unread-count {
-  .unread.children.collapsed:has(ul > .unread)>.container>& {
-    color: var(--folderpane-unread-count-text) !important;
-    background-color: var(--nord_03) !important;
-    border: 1px solid var(--nord_03) !important;
-  }
+.unread.children.collapsed:has(ul > .unread) > .container > .unread-count {
+  color: var(--folderpane-unread-count-text) !important;
+  background-color: var(--nord_03) !important;
+  border: 1px solid var(--nord_03) !important;
 }
-
-////////////////////////////////////////////////////////////////////////////////
-// ACCOUNT VIEW
-////////////////////////////////////////////////////////////////////////////////
 
 /* This is where an email account is configured */
 #accountCentral {
-  background-image: url('account-watermark-nord.svg') !important;
+  background-image: url("account-watermark-nord.svg") !important;
   background-position: bottom center !important;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// INBOX
-////////////////////////////////////////////////////////////////////////////////
-
-// INBOX CONTAINER
-
-#threadTree[rows="thread-card"] {
-  // main background color for cards view
+#threadTree[rows=thread-card] {
   background-color: var(--nord_00) !important;
 }
 
-th[is="tree-view-table-header-cell"] {
+th[is=tree-view-table-header-cell] {
   border-bottom: 1px solid var(--nord_01);
 }
 
 /* email-list table-header background */
-th[is="tree-view-table-header-cell"],
-th[is="tree-view-table-column-picker"] {
+th[is=tree-view-table-header-cell],
+th[is=tree-view-table-column-picker] {
   background-color: var(--nord_01) !important;
 }
 
 /* new email (spark) icon in inbox list before the email subject */
-tr[data-properties~="new"] td .subject-line img {
+tr[data-properties~=new] td .subject-line img {
   fill: var(--nord_13) !important;
   stroke: var(--nord_00) !important;
 }
 
 /* unread email */
-#threadTree tbody tr[data-properties~="unread"] * {
+#threadTree tbody tr[data-properties~=unread] * {
   color: var(--nord_05) !important;
 }
 
-// Use the circle as generic indicator for emails
 #threadTree tr.card-layout .read-status {
-  content: '' !important;
+  content: "" !important;
   width: 0.6rem !important;
   height: 0.6rem !important;
   border-radius: 100% !important;
@@ -99,46 +76,37 @@ tr[data-properties~="new"] td .subject-line img {
   margin: 4px 0 0 2px;
 }
 
-// Unread email
-#threadTree tr.card-layout[data-properties~="unread"] .read-status {
+#threadTree tr.card-layout[data-properties~=unread] .read-status {
   background-color: var(--nord_08) !important;
 }
 
-// New email
-#threadTree tr.card-layout[data-properties~="unread"][data-properties~="new"] .read-status {
+#threadTree tr.card-layout[data-properties~=unread][data-properties~=new] .read-status {
   background-color: var(--nord_14) !important;
 }
 
 /* Read email */
-#threadTree tbody tr[data-properties~="read"] * {
+#threadTree tbody tr[data-properties~=read] * {
   color: #74818e !important;
 }
 
-// keep NEW color even when selecting the row
-#threadTree [data-properties~="new"] .thread-card-container :is(.subject, .date) {
+#threadTree [data-properties~=new] .thread-card-container :is(.subject, .date) {
   color: var(--new-folder-color) !important;
 }
 
-.multi-selected [is="tree-view-table-body"]>.selected.current,
-.multi-selected [is="tree-view-table-body"]:focus>.selected.current {
-  // on multiselect, this indicates the currently focused (last selected) entry.
+.multi-selected [is=tree-view-table-body] > .selected.current,
+.multi-selected [is=tree-view-table-body]:focus > .selected.current {
   outline-color: var(--nord_between_2_n_9) !important;
   border: 1px solid transparent;
 }
 
-.multi-selected [is="tree-view-table-body"]>.selected.current td,
-.multi-selected [is="tree-view-table-body"]:focus>.selected.current td {
-  // on multiselect, this indicates the currently focused (last selected) entry.
-  border: 1px solid transparent; // add this border so the outline defined in the parent tr shows correctly.
+.multi-selected [is=tree-view-table-body] > .selected.current td,
+.multi-selected [is=tree-view-table-body]:focus > .selected.current td {
+  border: 1px solid transparent;
 }
 
 #quick-filter-bar {
   background-color: var(--nord_00) !important;
 }
-
-////////////////////////////////////////////////////////////////////////////////
-// RIGHT SIDEBAR - AGENDA
-////////////////////////////////////////////////////////////////////////////////
 
 #today-pane-panel {
   background-color: var(--nord_01) !important;
@@ -147,11 +115,11 @@ tr[data-properties~="new"] td .subject-line img {
   overflow: hidden;
 }
 
-#today-pane-panel>.sidebar-header {
+#today-pane-panel > .sidebar-header {
   border-color: transparent !important;
 }
 
-#today-pane-panel>vbox {
+#today-pane-panel > vbox {
   background-color: transparent !important;
   background-image: none !important;
 }
@@ -188,17 +156,11 @@ tr[data-properties~="new"] td .subject-line img {
   border-color: transparent !important;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// CALENDAR
-////////////////////////////////////////////////////////////////////////////////
-
 calendar-minimonth {
   background-color: var(--nord_01) !important;
   border-color: transparent !important;
-
   /* unable to define from theme */
   --mmMainColor: var(--sidebar-text-color);
-  // --mmMainBackground: var(--nord_01); // not working
   --mmMainBorderColor: var(--nord_01);
   --mmHighlightColor: var(--nord_07);
   --mmHighlightBackground: var(--nord_03);
@@ -223,7 +185,6 @@ calendar-minimonth {
   --mmDayWeekColor: var(--nord_between_2_n_9);
   --mmDayTodayBackground: var(--nord_between_2_n_9);
   --mmDayBusyColor: var(--nord_11);
-
   /* styling: make minimap smaller */
   --mmBoxItemPadding: 0px;
   --mmDayPadding: 0px;
@@ -237,11 +198,10 @@ calendar-minimonth {
 }
 
 /* date */
-.calendar-month-day-box-date-label[relation="today"] {
+.calendar-month-day-box-date-label[relation=today] {
   color: var(--viewTodayLabelColor) !important;
 }
 
-// mini-month navigation top buttons (month, year)
 .minimonth-nav-section {
   background-color: transparent !important;
 }
@@ -263,40 +223,130 @@ calendar-minimonth {
   border-color: var(--nord_03) !important;
 }
 
-// Remove a weird border at the right & bottom.
 .monthtable {
   border: 0;
 }
 
-// Make monthly calendar days rounded
 .monthtable calendar-month-day-box,
-.monthtable th>* {
+.monthtable th > * {
   border-color: transparent;
   background: var(--nord_01);
 }
 
 .monthtable .calendar-month-day-box-day-off,
-.monthtable th>*.calendar-month-day-box-day-off {
-  background: var(--viewWeekendBackground); // ensure days off are colored as original rule has less precedence than regular day specified previously.
+.monthtable th > *.calendar-month-day-box-day-off {
+  background: var(--viewWeekendBackground);
 }
 
-.monthtable calendar-month-day-box.calendar-month-day-box-current-month[selected="true"],
-.monthtable calendar-month-day-box.calendar-month-day-box-day-off[selected="true"],
-.monthtable calendar-month-day-box.calendar-month-day-box-other-month[selected="true"] {
+.monthtable calendar-month-day-box.calendar-month-day-box-current-month[selected=true],
+.monthtable calendar-month-day-box.calendar-month-day-box-day-off[selected=true],
+.monthtable calendar-month-day-box.calendar-month-day-box-other-month[selected=true] {
   background-color: var(--viewDayBoxSelectedBackground);
   border: 1px solid var(--nord_09);
 }
 
-.monthtable calendar-month-day-box.calendar-month-day-box-current-month[relation="today"],
-.monthtable calendar-month-day-box.calendar-month-day-box-day-off[relation="today"],
-.monthtable calendar-month-day-box.calendar-month-day-box-other-month[relation="today"] {
+.monthtable calendar-month-day-box.calendar-month-day-box-current-month[relation=today],
+.monthtable calendar-month-day-box.calendar-month-day-box-day-off[relation=today],
+.monthtable calendar-month-day-box.calendar-month-day-box-other-month[relation=today] {
   background-color: var(--viewTodayBackground);
 }
 
-// Selected event in calendar day. `calendar-month-day-box` is added to increment specificity.calendar-month-day-box calendar-month-day-box-item[selected="true"].calendar-color-box,
-calendar-month-day-box calendar-month-day-box-item[selected="true"].calendar-color-box,
-calendar-month-day-box calendar-event-box[selected="true"].calendar-color-box,
-calendar-month-day-box calendar-editable-item[selected="true"].calendar-color-box {
+calendar-month-day-box calendar-month-day-box-item[selected=true].calendar-color-box,
+calendar-month-day-box calendar-event-box[selected=true].calendar-color-box,
+calendar-month-day-box calendar-editable-item[selected=true].calendar-color-box {
   color: var(--nord_03) !important;
   background-color: var(--nord_04) !important;
+}
+/*********************************************************************************
+IMPROVED UI, NOT COLOR RELATED
+*********************************************************************************/
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap';
+* {
+  scrollbar-width: thin;
+}
+
+:root {
+  --font1: "Montserrat";
+}
+
+body {
+  font-family: var(--font1), sans-serif !important;
+  font-optical-sizing: auto !important;
+}
+
+#threadPane {
+  border-radius: 5px;
+}
+
+#threadTree tbody tr * {
+  font-weight: 200 !important;
+}
+
+.thread-card-container {
+  margin-left: 0.5rem;
+}
+
+.agenda-listitem-details {
+  border-radius: 4px !important;
+  font-weight: 500;
+}
+
+/* current (day) date */
+#datevalue-label {
+  color: var(--nord_14) !important;
+}
+
+.agenda-date-header {
+  color: var(--nord_06) !important;
+  background-color: transparent !important;
+}
+
+/* third pane (user details) */
+#detailsBody section {
+  border-radius: 4px !important;
+}
+
+/* MINI MONTH */
+.minimonth-day:hover,
+.minimonth-day[selected=true],
+.minimonth-day[today=true] {
+  border-radius: 4px !important;
+}
+
+#calMinimonthBox {
+  width: 100%;
+  margin: 0 !important;
+  padding: var(--calendar-side-panel-minimonth-margin);
+}
+
+#calMinimonth {
+  width: 100%;
+}
+
+.minimonth-nav-btn:not(.today-button) {
+  width: 1.5rem !important;
+}
+
+.monthtable calendar-month-day-box,
+.monthtable th > * {
+  margin: 3px;
+  border-radius: 4px;
+}
+
+/* TASKS */
+.calendar-color-box {
+  box-shadow: none !important;
+  border-radius: 4px !important;
+}
+
+.event-name-input,
+.event-name-label {
+  font-weight: 500;
+}
+
+.calendar-category-box {
+  width: 4px !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  inset: 0 auto 0 0 !important;
 }
